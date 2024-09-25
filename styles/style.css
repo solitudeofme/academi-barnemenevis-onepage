@@ -38,6 +38,7 @@
   --hovercolor:#007ad1;
   --subtitlecolor:gray;
   --sectionbackground:#F7FBFE;
+  --section-wrapper-margin:4em auto 0;
 }
 * {
   box-sizing: border-box;
@@ -170,6 +171,7 @@ ul {
 h3.section-title {
   margin: 0;
   font-family: my-pinar, sans-serif;
+  font-size: 1.6rem;
 }
 .section-title::before,
 .section-title::after {
@@ -186,11 +188,12 @@ h3.section-title {
   margin-right: 10px;
 }
 h4.section-sub-title {
-  color: gray;
+  color: var(--subtitlecolor);
   font-weight: bold;
+  font-size: 1rem;
 }
 #services-wrapper {
-  margin: 2em auto 0;
+  margin: var(--section-wrapper-margin);
   display: flex;
   gap: 1em;
 }
@@ -203,9 +206,13 @@ h4.section-sub-title {
   box-shadow: 0 0 10px 5px whitesmoke;
   border-radius: 7px;
 }
-#service-item p {
-  color: gray;
-  font-size: 0.8rem;
+.service-item h3{
+  font-size: 1.4rem;
+}
+.service-item p {
+  color: var(--subtitlecolor);
+  font-size: 1.15rem;
+  line-height: 1.3;
 }
 .service-logo-wrapper {
   background-color: var(--maincolor);
@@ -263,17 +270,22 @@ h4.section-sub-title {
 #teachers-wrapper{
   display: flex;
   gap: 1.4em;
+  margin: var(--section-wrapper-margin);
 }
 .teacher-item img{
   max-width: 100%;
   vertical-align: middle;/*this makes the extra space at the bottom of the div go away*/
 }
 .teacher-item{
+  position: relative;
   border-radius: 10px;
   background-color: #ffffff;
   overflow: hidden;
   box-shadow: 5px 5px 5px whitesmoke;
   transition: all 200ms ease-in-out;
+}
+.teacher-item:hover{
+  transform: scale(1.08);
 }
 .teacher-item h3{
   color: var(--maincolor);
@@ -284,5 +296,34 @@ h4.section-sub-title {
   font-size: 1rem;
 }
 .teacher-item h3, .teacher-item h4{
+  white-space: nowrap;
   text-align: center;
+}
+.teacher-item ul{
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  background-color:white;
+  border-radius: 10px;
+  width: 40px;
+  position: absolute;
+  top: 15px;
+  right: -40px;
+  transition: all 200ms ease-in-out;
+}
+.teacher-item:hover ul{
+  right: 9px;
+}
+.teacher-item ul a{
+  color:var(--maincolor);
+  opacity: .4;
+  font-size: 1.5rem;
+  transition :200ms ease-in-out;
+}
+.teacher-item ul a:hover{
+  opacity: 1;
 }
