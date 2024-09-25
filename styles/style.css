@@ -36,6 +36,8 @@
 :root{
   --maincolor:#005b9e;
   --hovercolor:#007ad1;
+  --subtitlecolor:gray;
+  --sectionbackground:#F7FBFE;
 }
 * {
   box-sizing: border-box;
@@ -158,32 +160,32 @@ ul {
   width: 100%;
   animation: move 2s alternate infinite ease-in-out;
 }
-.services {
+#services {
   padding: 7em 0 7em;
 }
-#services-title,
-#services-sub-title {
+.section-title,
+.section-sub-title {
   text-align: center;
 }
-h3#services-title {
+h3.section-title {
   margin: 0;
   font-family: my-pinar, sans-serif;
 }
-#services-title::before,
-#services-title::after {
+.section-title::before,
+.section-title::after {
   content: "";
   display: inline-block;
   width: 50px;
   height: 3px;
   background-color: var(--maincolor);
 }
-#services-title::before {
+.section-title::before {
   margin-left: 10px;
 }
-#services-title::after {
+.section-title::after {
   margin-right: 10px;
 }
-h4#services-sub-title {
+h4.section-sub-title {
   color: gray;
   font-weight: bold;
 }
@@ -201,7 +203,7 @@ h4#services-sub-title {
   box-shadow: 0 0 10px 5px whitesmoke;
   border-radius: 7px;
 }
-.service-item p {
+#service-item p {
   color: gray;
   font-size: 0.8rem;
 }
@@ -253,4 +255,34 @@ h4#services-sub-title {
 }
 .service-item:hover .service-logo-wrapper {
   background-color: white;
+}
+#teachers{
+  background-color: var(--sectionbackground);
+  padding: 6em 0;
+}
+#teachers-wrapper{
+  display: flex;
+  gap: 1.4em;
+}
+.teacher-item img{
+  max-width: 100%;
+  vertical-align: middle;/*this makes the extra space at the bottom of the div go away*/
+}
+.teacher-item{
+  border-radius: 10px;
+  background-color: #ffffff;
+  overflow: hidden;
+  box-shadow: 5px 5px 5px whitesmoke;
+  transition: all 200ms ease-in-out;
+}
+.teacher-item h3{
+  color: var(--maincolor);
+  font-size: 1.2rem;
+}
+.teacher-item h4{
+  color: var(--subtitlecolor);
+  font-size: 1rem;
+}
+.teacher-item h3, .teacher-item h4{
+  text-align: center;
 }
