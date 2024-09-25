@@ -357,8 +357,8 @@ ul {
   margin: var(--section-wrapper-margin);
   display: grid;
   gap: .6em ;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  align-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(350px, .8fr));
+justify-content: center;
 }
 .course-item{
   border-radius: 20px;
