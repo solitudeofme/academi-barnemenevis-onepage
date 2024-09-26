@@ -399,6 +399,7 @@ justify-content: center;
   right: 0;
   bottom: -40px;
   transition: all 200ms ease-in-out;
+  z-index: 5;
 }
 .course-item:hover h4{
  bottom: 13px;
